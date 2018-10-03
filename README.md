@@ -30,3 +30,4 @@ Change these to alter the VM.
 - [ ] Organize repo in folders.
 - [ ] Explore provisioning through Puppet.
 - [ ] Explore synced folders.
+- [ ] Make sure provisioning is idempotent.
