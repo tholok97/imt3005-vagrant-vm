@@ -17,8 +17,16 @@ This repo defines the virtual machine I use for working with OpenStack and Puppe
 
 Change these to alter the VM.
 
-* **`bootstrap.sh`**: Installs OpenStack CLI tools, puppet, pdk.
-* **`openstack.rc`**: Provides environment variables for the OpenStack CLI tools. (You have to provide this yourself. See "setup")
+* **`bootstrap.sh`**: Installs OpenStack CLI tools, puppet, pdk. Anything you want configured during provisioning should be put here.
+* **`openstack.rc`**: Provides environment variables for the OpenStack CLI tools. You have to provide this yourself. See "setup".
 * **`.profile`**: This file is sourced upon login. Used to source `openstack.rc`.
-* **`.bash_aliases`**: Contains bash aliases.
-* **`.vimrc`**: Contains vim configuration for environment
+* **`.bash_aliases`**: Contains handy bash aliases.
+* **`.vimrc`**: Contains vim configuration for environment.
+
+## TODO
+
+- [x] Basic concept working!
+- [ ] Implement more seamless way to authenticate. API token?
+- [ ] Organize repo in folders.
+- [ ] Explore provisioning through Puppet.
+- [ ] Explore synced folders.
