@@ -7,6 +7,9 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
   config.vm.box_version = "20180927.0.0"
 
+  # set name of vm
+  config.vm.define "imt3005-vagrant-vm"
+
   # runs bootscript to install packages
   config.vm.provision "shell" do |s|
     s.binary = true
