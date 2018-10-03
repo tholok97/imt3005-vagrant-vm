@@ -30,6 +30,16 @@ Vagrant.configure("2") do |config|
     f.destination = "$HOME/.profile"
   end
 
+  config.vm.provision "file" do |f|
+    f.source      = ".bash_aliases"
+    f.destination = "$HOME/.bash_aliases"
+  end
+
+  config.vm.provision "file" do |f|
+    f.source      = ".vimrc"
+    f.destination = "$HOME/.vimrc"
+  end
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
