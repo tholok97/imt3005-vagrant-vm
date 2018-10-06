@@ -13,6 +13,22 @@ This repo defines the virtual machine I use for working with OpenStack and Puppe
 1. Run `vagrant ssh` to connect to the VM. You'll be prompted for your password.
 1. Try and run `openstack image list`. If this command succeeds without error (i.e. you are shown a table of VM images) everything should be set up correctly.
 
+**If you don't want to have to put in your password every time you login**, you can edit the `openstack.rc` file to include your password. Change this:
+
+```
+echo "Please enter your OpenStack Password for project $OS_PROJECT_NAME as user $OS_USERNAME: "
+read -sr OS_PASSWORD_INPUT
+export OS_PASSWORD=$OS_PASSWORD_INPUT
+```
+
+To This:
+
+```
+export OS_PASSWORD=<your-password-here>
+```
+
+The downside to this is that your password is now stored in plaintext in the `openstack.rc` file. Keep this in mind, and secure file if necessary.
+
 ## Configuration files
 
 Change these to alter the VM.
