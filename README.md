@@ -21,13 +21,13 @@ read -sr OS_PASSWORD_INPUT
 export OS_PASSWORD=$OS_PASSWORD_INPUT
 ```
 
-To This:
+To this:
 
 ```
 export OS_PASSWORD=<your-password-here>
 ```
 
-The downside to this is that your password is now stored in plaintext in the `openstack.rc` file. Keep this in mind, and secure file if necessary.
+A downside is now stored in plaintext in the `openstack.rc` file. Keep this in mind, and secure file if necessary.
 
 ## Configuration files
 
