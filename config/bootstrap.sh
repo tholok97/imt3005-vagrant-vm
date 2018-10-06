@@ -13,8 +13,8 @@ sudo pip install cryptography idna
 sudo pip install python-{openstack,keystone,nova,glance,cinder,neutron,ceilometer,heat}client
 
 # add puppetlabs repo
-wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
-sudo dpkg -i puppet5-release-xenial.deb
+wget https://apt.puppetlabs.com/puppet5-release-xenial.deb -O /tmp/puppet5-release-xenial.deb 
+sudo dpkg -i /tmp/puppet5-release-xenial.deb
 apt-get update
 
 # install puppet-agent
