@@ -40,4 +40,7 @@ Vagrant.configure("2") do |config|
     f.destination = "$HOME/.vimrc"
   end
 
+  # sync repo folder synced/ with VM folder ~/synced/
+  config.vm.synced_folder "synced/", "/home/vagrant/synced/", create: true
+
 end

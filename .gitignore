@@ -7,6 +7,12 @@ ubuntu-bionic-18.04-cloudimg-console.log
 # ignore openstack.rc file, as it contains personal information
 openstack.rc
 
+# ignore contens of synced/
+synced/*
+
+# don't ignore .gitkeep, to force git to include the folder in VC
+!synced/.gitkeep
+
 # Ignore any build-files still roaming around
 *.exe
 *.out
