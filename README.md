@@ -31,7 +31,7 @@ Beware that your password is now stored in plaintext in `openstack.rc`.
 
 ## Configuration files
 
-Change these to alter the VM.
+Change these to alter the VM. Remember that you need to re-provision the VM for the changes to take effect. (e.g. `vagrant reload --provision`).
 
 * **`bootstrap.sh`**: Installs OpenStack CLI tools, puppet, pdk. Anything you want configured during provisioning should be put here.
 * **`openstack.rc`**: Provides environment variables for the OpenStack CLI tools. You have to provide this yourself. See "setup".
