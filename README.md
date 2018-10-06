@@ -27,7 +27,7 @@ To this:
 export OS_PASSWORD=<your-password-here>
 ```
 
-A downside is now stored in plaintext in the `openstack.rc` file. Keep this in mind, and secure file if necessary.
+Beware that your password is now stored in plaintext in `openstack.rc`.
 
 ## Configuration files
 
