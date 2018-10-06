@@ -2,7 +2,7 @@
 
 ## Description
 
-This repo defines the virtual machine I use for working with OpenStack and Puppet in the course IMT3005 - Infrastructure as Code using Vagrant. The machine is based on Ubuntu 16.04, and comes with the OpenStack CLI tools, pdk, and puppet-agent installed. Configuration is done through the Vagrantfile, so that the environment is disposable and reproducable.
+This repo defines the virtual machine I use for working with OpenStack and Puppet in the course IMT3005 - Infrastructure as Code using Vagrant. The machine is based on Ubuntu 16.04, and comes with the OpenStack CLI tools, pdk, and puppet-agent installed. Configuration is done through a Vagrantfile, so that the environment is disposable and reproducable.
 
 ## Structure
 
