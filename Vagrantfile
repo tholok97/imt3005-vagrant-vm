@@ -34,6 +34,12 @@ Vagrant.configure("2") do |config|
     f.destination = "$HOME/.bash_aliases"
   end
 
+  # copy over .bashrc
+  config.vm.provision "file" do |f|
+    f.source      = "config/.bashrc"
+    f.destination = "$HOME/.bashrc"
+  end
+
   # copy over .vimrc
   config.vm.provision "file" do |f|
     f.source      = "config/.vimrc"
