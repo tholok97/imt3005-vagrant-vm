@@ -55,8 +55,12 @@ Change these files to alter the VM. Remember that you need to re-provision the V
 ## TODO
 
 - [x] Basic concept working!
+- [x] Autocompletion for OpenStack CLI tool
+- [ ] Generate autocompletion file based on installed OpenStack CLI tool? The way it's set up right now a version bump to the tool without updating the completion file might cause trouble..
 - [ ] Implement more seamless way to authenticate. API token?
 - [x] Organize repo in folders.
 - [ ] Explore provisioning through Puppet.
 - [ ] Explore synced folders.
 - [ ] Make sure provisioning is idempotent.
+- [ ] Include git user configuration as part of provisioning process
+- [ ] Figure out smoother way to bring in ssh keys. Currently they have to be manually copied in for every new machine, as placing it in the synced folder will store as 777, which gives an "unprotected private key file" error from ssh.

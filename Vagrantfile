@@ -40,6 +40,12 @@ Vagrant.configure("2") do |config|
     f.destination = "$HOME/.bashrc"
   end
 
+  # copy over .bash_completion
+  config.vm.provision "file" do |f|
+    f.source      = "config/.bash_completion"
+    f.destination = "$HOME/.bash_completion"
+  end
+
   # copy over .vimrc
   config.vm.provision "file" do |f|
     f.source      = "config/.vimrc"
