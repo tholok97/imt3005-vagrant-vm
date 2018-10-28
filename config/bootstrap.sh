@@ -1,3 +1,7 @@
+# Arguments:
+# $1 - git user email
+# $2 - git user name
+
 #!/bin/bash
 apt-get update
 
@@ -22,3 +26,10 @@ apt-get -y install puppet-agent
 
 # install pdk
 apt-get -y install pdk
+
+# setup git user. 
+cat <<EOF > /home/vagrant/.gitconfig
+[user]
+  email = $1
+  name = $2
+EOF

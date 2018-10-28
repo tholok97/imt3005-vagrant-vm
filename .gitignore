@@ -7,6 +7,9 @@ ubuntu-xenial-16.04-cloudimg-console.log
 # ignore openstack.rc file, as it contains personal information
 openstack.rc
 
+# ignore enviornment yaml file
+environment.yaml
+
 # ignore contens of synced/
 synced/*
 

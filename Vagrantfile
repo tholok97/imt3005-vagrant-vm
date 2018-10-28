@@ -1,6 +1,13 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require 'yaml'
+
+environment = YAML.load_file(File.join(File.dirname(__FILE__), 'config/environment.yaml'))
+
+Vagrant.require_version ">= 1.6.0"
+VAGRANTFILE_API_VERSION = "2"
+
 Vagrant.configure("2") do |config|
 
   # box this development environment is built around
@@ -14,6 +21,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" do |s|
     s.binary = true
     s.path   = "config/bootstrap.sh"
+    s.args = [ environment['git']['email'], environment['git']['name']]
   end
 
   # copy over openstack.rc

@@ -17,6 +17,8 @@ This repo defines the virtual machine I use for working with OpenStack and Puppe
 1. Set up Vagrant and VirtualBox if you haven't already.
 1. Clone this repo.
 1. Download (or write) a `openstack.rc` file. Should be using version 3. Place it in the `config/` folder.
+1. Create a `config/environment.yaml` file. An example of what this file should look like is found in `config/environment_example.yaml`, so you can run `cp config/environment_example.yaml config/environment.yaml` to create it.
+1. Edit the `config/environment.yaml` with your own settings.
 1. If you don't want to type your password on every login, see below before continuing.
 1. Run `vagrant up` from within the cloned repo. Vagrant will create and provision the VM.
 1. Run `vagrant ssh` to connect to the VM. You'll be prompted for your password if you did not hardcode it in `openstack.rc`.
@@ -50,6 +52,9 @@ Change these files to alter the VM. Remember that you need to re-provision the V
 * **`config/openstack.rc`**: Provides environment variables for the OpenStack CLI tools. You have to provide this yourself. See "setup".
 * **`config/.profile`**: This file is sourced upon login. Used to source `openstack.rc`.
 * **`config/.bash_aliases`**: Contains handy bash aliases.
+* **`config/.bash_aliases`**: Contains output of `openstack complete`. Used to provide autocompletion in OpenStack CLI.
+* **`config/environment.yaml`**: Environment-specific settings. You have to provide this youself. See "setup".
+* **`config/environment_example.yaml`**: Example of what the above file should look like.
 * **`config/.vimrc`**: Contains vim configuration for environment.
 
 ## TODO
