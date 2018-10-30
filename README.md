@@ -69,3 +69,4 @@ Change these files to alter the VM. Remember that you need to re-provision the V
 - [ ] Make sure provisioning is idempotent.
 - [x] Include git user configuration as part of provisioning process
 - [ ] Figure out smoother way to bring in ssh keys. Currently they have to be manually copied in for every new machine, as placing them in the synced folder will store them as 777, which gives "unprotected private key file" errors from ssh.
+- [ ] Explore using OpenStack as provider.
