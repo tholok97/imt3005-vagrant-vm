@@ -17,7 +17,7 @@ sudo pip install cryptography idna
 sudo pip install python-{openstack,keystone,nova,glance,cinder,neutron,ceilometer,heat}client
 
 # add puppetlabs repo
-wget https://apt.puppetlabs.com/puppet5-release-xenial.deb -O /tmp/puppet5-release-xenial.deb 
+curl -o /tmp/puppet5-release-xenial.deb https://apt.puppetlabs.com/puppet5-release-xenial.deb
 sudo dpkg -i /tmp/puppet5-release-xenial.deb
 apt-get update
 
@@ -33,3 +33,11 @@ cat <<EOF > /home/vagrant/.gitconfig
   email = $1
   name = $2
 EOF
+
+# install vagrant
+curl -o /tmp/vagrant_2.2.0_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.0/vagrant_2.2.0_x86_64.deb
+dpkg -i /tmp/vagrant_2.2.0_x86_64.deb
+
+# install openstack plugin
+# (has to be installed by user vagrant)
+runuser -l vagrant -c 'vagrant plugin install vagrant-openstack-provider'
