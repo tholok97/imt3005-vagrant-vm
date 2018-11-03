@@ -27,6 +27,9 @@ apt-get -y install puppet-agent
 # install pdk
 apt-get -y install pdk
 
+# install puppet-lint
+apt-get -y install puppet-lint
+
 # setup git user. 
 cat <<EOF > /home/vagrant/.gitconfig
 [user]
@@ -41,3 +44,6 @@ dpkg -i /tmp/vagrant_2.2.0_x86_64.deb
 # install openstack plugin
 # (has to be installed by user vagrant)
 runuser -l vagrant -c 'vagrant plugin install vagrant-openstack-provider'
+
+# install latex with dependancy required for "minted" latex package to work
+apt-get -y install texlive-latex-extra python-pygments
