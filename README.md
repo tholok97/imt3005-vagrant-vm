@@ -2,7 +2,7 @@
 
 ## Description
 
-This repo defines the virtual machine I use for working with OpenStack and Puppet in the course IMT3005 - Infrastructure as Code using Vagrant. The machine is based on Ubuntu 16.04, and comes with the OpenStack CLI tools, pdk, puppet-agent and Vagrant installed. Configuration is done through a Vagrantfile, so that the environment is disposable and reproducable.
+This repo defines the virtual machine I use for working with OpenStack and Puppet in the course IMT3005 - Infrastructure as Code using Vagrant. The machine is based on Ubuntu 16.04, and comes with the OpenStack CLI tools, pdk, puppet-agent and Vagrant installed. Configuration is done through a Vagrantfile, so that the environment is disposable and reproducible.
 
 ## Structure
 
@@ -53,7 +53,7 @@ Change these files to alter the VM. Remember that you need to re-provision the V
 * **`config/.profile`**: This file is sourced upon login. Used to source `openstack.rc`.
 * **`config/.bash_aliases`**: Contains handy bash aliases.
 * **`config/.bash_aliases`**: Contains output of `openstack complete`. Used to provide autocompletion in OpenStack CLI.
-* **`config/environment.yaml`**: Environment-specific settings. You have to provide this youself. See "setup".
+* **`config/environment.yaml`**: Environment-specific settings. You have to provide this yourself. See "setup".
 * **`config/environment_example.yaml`**: Example of what the above file should look like.
 * **`config/.vimrc`**: Contains vim configuration for environment.
 
