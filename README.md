@@ -52,7 +52,9 @@ Beware that your password is now stored in plaintext in `openstack.rc`.
 
 ## Usage
 
-*TBA*
+Place anything you want to persist beyond the life of the machine in the `synced` folder. Use the environment in such a way that destroying it and creating it from scratch does not affect your work.
+
+**Exception**: Windows will force everything inside the synced folder to have 777 permissions, which means storing private keys there will make ssh unhappy. I usually have a copy in the synced folder, and then manually copy it outside the folder to correctly be able to set permissions. This is a manual task that needs to be done every time the machine is created from scratch, and I am looking into how the situation can be improved.
 
 ## Configure
 
