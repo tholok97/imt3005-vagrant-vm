@@ -1,8 +1,9 @@
+#!/bin/bash
+
 # Arguments:
 # $1 - git user email
 # $2 - git user name
 
-#!/bin/bash
 apt-get update
 
 # install necessary stuff for openstack cli client to work
