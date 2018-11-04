@@ -20,6 +20,7 @@ This repo defines the virtual machine I use for working with OpenStack and Puppe
 1. Create a `config/environment.yaml` file. An example of what this file should look like is found in `config/environment_example.yaml`, so you can run `cp config/environment_example.yaml config/environment.yaml` to create it.
 1. Edit the `config/environment.yaml` with your own settings.
 1. If you don't want to type your password on every login, see below before continuing.
+1. Consider editing the `config/bootstrap.sh` script to remove LaTeX, as installing it takes a long time. In the future I'll make this configurable through the `config/environment.yaml` file.
 1. Run `vagrant up` from within the cloned repo. Vagrant will create and provision the VM.
 1. Run `vagrant ssh` to connect to the VM. You'll be prompted for your password if you did not hardcode it in `openstack.rc`.
 1. Try and run `openstack image list`. If this command succeeds without error (i.e. you are shown a table of VM images) everything should be set up correctly.
