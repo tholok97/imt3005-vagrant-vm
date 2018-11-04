@@ -1,8 +1,17 @@
 # Vagrant-defined VM for working with IMT3005 - Infrastructure as Code
 
-## Description
+## Introduction
 
-This repo defines the virtual machine I use for working with OpenStack and Puppet in the course IMT3005 - Infrastructure as Code using Vagrant. The machine is based on Ubuntu 16.04, and comes with the OpenStack CLI tools, pdk, puppet-agent and Vagrant installed. Configuration is done through a Vagrantfile, so that the environment is disposable and reproducible.
+This repo defines a Vagrant environment for working with the course IMT3005 - Infrastructure as Code. As Virtual Machines created using this method are disposable, you can experiment to your heart's content without messing anything up.
+
+## Included tools
+
+* OpenStack CLI
+* pdk
+* puppet-agent
+* puppet-lint
+* Vagrant
+* LaTeX
 
 ## Structure
 
@@ -49,7 +58,7 @@ Beware that your password is now stored in plaintext in `openstack.rc`.
 
 Change these files to alter the VM. Remember that you need to re-provision the VM for the changes to take effect. (e.g. `vagrant reload --provision`).
 
-* **`config/bootstrap.sh`**: Installs OpenStack CLI tools, puppet, pdk. Anything you want configured during provisioning should be put here.
+* **`config/bootstrap.sh`**: Installs tools needed for course. Anything you want configured during provisioning should be added there.
 * **`config/openstack.rc`**: Provides environment variables for the OpenStack CLI tools. You have to provide this yourself. See "setup".
 * **`config/.profile`**: This file is sourced upon login. Used to source `openstack.rc`.
 * **`config/.bash_aliases`**: Contains handy bash aliases.
@@ -66,7 +75,9 @@ Change these files to alter the VM. Remember that you need to re-provision the V
 - [ ] Implement more seamless way to authenticate. API token?
 - [x] Organize repo in folders.
 - [ ] Explore provisioning through Puppet.
-- [ ] Explore synced folders.
+- [x] Explore synced folders.
 - [ ] Make sure provisioning is idempotent.
-- [ ] Include git user configuration as part of provisioning process
+- [x] Include git user configuration as part of provisioning process
 - [ ] Figure out smoother way to bring in ssh keys. Currently they have to be manually copied in for every new machine, as placing them in the synced folder will store them as 777, which gives "unprotected private key file" errors from ssh.
+- [x] Include Vagrant and LaTeX.
+- [ ] Implement toggles in yaml configuration file to turn off installation of selected packages (LaTeX).
