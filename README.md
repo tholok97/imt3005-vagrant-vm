@@ -1,8 +1,17 @@
 # Vagrant-defined VM for working with IMT3005 - Infrastructure as Code
 
-## Description
+## Introduction
 
-This repo defines the virtual machine I use for working with OpenStack and Puppet in the course IMT3005 - Infrastructure as Code using Vagrant. The machine is based on Ubuntu 16.04, and comes with the OpenStack CLI tools, pdk, and puppet-agent installed. Configuration is done through a Vagrantfile, so that the environment is disposable and reproducable.
+This repo defines a Vagrant environment for working with the course IMT3005 - Infrastructure as Code. As Virtual Machines created using this method are disposable, you can experiment to your heart's content without messing anything up.
+
+## Included tools
+
+* OpenStack CLI
+* pdk
+* puppet-agent
+* puppet-lint
+* Vagrant
+* LaTeX
 
 ## Structure
 
@@ -20,6 +29,7 @@ This repo defines the virtual machine I use for working with OpenStack and Puppe
 1. Create a `config/environment.yaml` file. An example of what this file should look like is found in `config/environment_example.yaml`, so you can run `cp config/environment_example.yaml config/environment.yaml` to create it.
 1. Edit the `config/environment.yaml` with your own settings.
 1. If you don't want to type your password on every login, see below before continuing.
+1. Consider editing the `config/bootstrap.sh` script to remove LaTeX, as installing it takes a long time. In the future I'll make this configurable through the `config/environment.yaml` file.
 1. Run `vagrant up` from within the cloned repo. Vagrant will create and provision the VM.
 1. Run `vagrant ssh` to connect to the VM. You'll be prompted for your password if you did not hardcode it in `openstack.rc`.
 1. Try and run `openstack image list`. If this command succeeds without error (i.e. you are shown a table of VM images) everything should be set up correctly.
@@ -48,12 +58,12 @@ Beware that your password is now stored in plaintext in `openstack.rc`.
 
 Change these files to alter the VM. Remember that you need to re-provision the VM for the changes to take effect. (e.g. `vagrant reload --provision`).
 
-* **`config/bootstrap.sh`**: Installs OpenStack CLI tools, puppet, pdk. Anything you want configured during provisioning should be put here.
+* **`config/bootstrap.sh`**: Installs tools needed for course. Anything you want configured during provisioning should be added there.
 * **`config/openstack.rc`**: Provides environment variables for the OpenStack CLI tools. You have to provide this yourself. See "setup".
 * **`config/.profile`**: This file is sourced upon login. Used to source `openstack.rc`.
 * **`config/.bash_aliases`**: Contains handy bash aliases.
 * **`config/.bash_aliases`**: Contains output of `openstack complete`. Used to provide autocompletion in OpenStack CLI.
-* **`config/environment.yaml`**: Environment-specific settings. You have to provide this youself. See "setup".
+* **`config/environment.yaml`**: Environment-specific settings. You have to provide this yourself. See "setup".
 * **`config/environment_example.yaml`**: Example of what the above file should look like.
 * **`config/.vimrc`**: Contains vim configuration for environment.
 
@@ -65,9 +75,11 @@ Change these files to alter the VM. Remember that you need to re-provision the V
 - [ ] Implement more seamless way to authenticate. API token?
 - [x] Organize repo in folders.
 - [ ] Explore provisioning through Puppet.
-- [ ] Explore synced folders.
+- [x] Explore synced folders.
 - [ ] Make sure provisioning is idempotent.
 - [x] Include git user configuration as part of provisioning process
 - [ ] Figure out smoother way to bring in ssh keys. Currently they have to be manually copied in for every new machine, as placing them in the synced folder will store them as 777, which gives "unprotected private key file" errors from ssh.
 - [ ] Explore using OpenStack as provider.
-- [ ] Add Vagrant to bootscript.
+- [x] Add Vagrant to bootscript.
+- [x] Include Vagrant and LaTeX.
+- [ ] Implement toggles in yaml configuration file to turn off installation of selected packages (LaTeX).
